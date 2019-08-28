@@ -13,22 +13,18 @@ int tempo_atual = 0, tempo_anterior = 0, timer;
 
 void estado1(){
   PORTB |= 1<<5;
-  tempo_anterior = millis();
   estado = 1;
 }
 void estado2(){
   PORTB &= ~(1<<5);
-  tempo_anterior = millis();
   estado = 2;
 }
 void estado3(){
   PORTB |= 1<<5;
-  tempo_anterior = millis();
   estado = 3;
 }
 void estado4(){
   PORTB &= ~(1<<5);
-  tempo_anterior = millis();
   estado = 4;
 }
 void estado5(){
@@ -122,6 +118,7 @@ void loop()
         decrementarFrequencia();
       }
       else if(piscar()){
+        tempo_anterior = millis();
         estado2();
       }
       break;
@@ -138,6 +135,7 @@ void loop()
         decrementarFrequencia();
       }
       else if(piscar()){
+        tempo_anterior = millis();
         estado1();
       }
       break;
@@ -158,6 +156,7 @@ void loop()
         estado1();
       }
       else if(piscar()){
+        tempo_anterior = millis();
         estado4();
       }
       break;
@@ -178,6 +177,7 @@ void loop()
         estado2();
       }
       else if(piscar()){
+        tempo_anterior = millis();
         estado3();
       }
       break;
