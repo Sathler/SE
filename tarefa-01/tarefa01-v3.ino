@@ -1,7 +1,3 @@
-#define LED_PIN 13
-#define BUT1 7
-#define BUT2 6
-
 //Inicialização de variaveis
 
 int frequencia = 1000, t=0;
